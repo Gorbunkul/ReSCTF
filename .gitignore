@@ -1,0 +1,7 @@
+
+lib
+backup
+ReSCTF.res
+ReSCTF.dbg
+*.exe
+*.ico

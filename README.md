@@ -1,2 +1,2 @@
 # ReSCTF
-Regex split and combine text files.
+Regexp split and combine text files.

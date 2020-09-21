@@ -5,8 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, CheckLst, ExtCtrls, Grids,
-  RegExpr;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, Grids,
+  Menus, RegExpr;
 
 type
 
@@ -22,12 +22,15 @@ type
     Edit6: TEdit;
     Label1: TLabel;
     Label2: TLabel;
+    MI_load: TMenuItem;
+    MI_save: TMenuItem;
+    MI_add_str: TMenuItem;
+    MI_del_str: TMenuItem;
+    TSG_PM: TPopupMenu;
     TSG: TStringGrid;
     ToggleBox1: TToggleBox;
     procedure CheckBox1Change(Sender: TObject);
-    procedure FormClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure TSGClick(Sender: TObject);
     procedure ToggleBox1Change(Sender: TObject);
   private
 
@@ -84,24 +87,9 @@ begin
   if CheckBox1.Checked=False then Edit3.Enabled:=True;
 end;
 
-procedure TForm1.FormClick(Sender: TObject);
-begin
-
-end;
-
-
 procedure TForm1.FormCreate(Sender: TObject);
 begin
 
-end;
-
-procedure TForm1.TSGClick(Sender: TObject);
-begin
-  If TSG.Selection.Left=1 Then Begin
-    If TSG.Cells[TSG.Selection.left, TSG.Selection.top]='0'
-      Then TSG.Cells[TSG.Selection.left, TSG.Selection.top]:='1'
-      else TSG.Cells[TSG.Selection.left, TSG.Selection.top]:='0';
-  end;
 end;
 
 end.

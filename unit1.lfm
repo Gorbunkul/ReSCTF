@@ -1,13 +1,13 @@
 object Form1: TForm1
-  Left = 331
-  Height = 577
-  Top = 223
-  Width = 711
+  Left = 355
+  Height = 749
+  Top = 119
+  Width = 1288
   Caption = 'Form1'
-  ClientHeight = 577
-  ClientWidth = 711
-  OnClick = FormClick
+  ClientHeight = 749
+  ClientWidth = 1288
   OnCreate = FormCreate
+  PopupMode = pmAuto
   LCLVersion = '2.0.10.0'
   object ToggleBox1: TToggleBox
     Left = 305
@@ -73,9 +73,9 @@ object Form1: TForm1
     TabOrder = 5
   end
   object Edit6: TEdit
-    Left = 10
+    Left = 140
     Height = 23
-    Top = 95
+    Top = 650
     Width = 665
     TabOrder = 6
   end
@@ -88,49 +88,127 @@ object Form1: TForm1
     TabOrder = 7
   end
   object TSG: TStringGrid
-    Left = 10
-    Height = 150
-    Top = 125
-    Width = 665
-    ColCount = 3
+    Left = 25
+    Height = 205
+    Top = 260
+    Width = 890
+    ColCount = 8
     Columns = <    
       item
         Alignment = taCenter
         ButtonStyle = cbsCheckboxColumn
+        MinSize = 10
+        MaxSize = 200
         Title.Alignment = taCenter
-        Title.Caption = 'Enable'
-        Width = 44
+        Title.Caption = 'Актив'
+        Width = 45
       end    
       item
-        Alignment = taLeftJustify
+        MinSize = 10
+        MaxSize = 200
+        Title.Caption = 'Цвет'
+        Width = 35
+      end    
+      item
         ButtonStyle = cbsPickList
+        MinSize = 10
+        MaxSize = 200
         PickList.Strings = (
-          '1'
-          '2'
-          '3'
-          '4'
+          '1 - С двух сторон'
+          '2 - С одной стороны'
+          '3 - Строка'
+          '4 - '
         )
-        Title.Caption = 'Title'
-        Width = 64
+        ReadOnly = False
+        Title.Alignment = taLeftJustify
+        Title.Caption = 'Тип обработки'
+        Width = 150
+      end    
+      item
+        MinSize = 10
+        MaxSize = 200
+        Title.Caption = 'Шаблон слева'
+        Width = 250
+      end    
+      item
+        Title.Caption = 'Шаблон справа'
+        Width = 250
+      end    
+      item
+        Title.Caption = 'Тэг слева'
+        Width = 65
+      end    
+      item
+        Title.Caption = 'Тэг справа'
+        Width = 65
       end>
+    DefaultColWidth = 64
+    DefaultRowHeight = 20
+    DragCursor = crHelp
     ExtendedSelect = False
     FixedColor = clGradientActiveCaption
-    RowCount = 2
+    Options = [goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing, goRowMoving, goEditing, goTabs, goAlwaysShowEditor, goSmoothScroll, goFixedRowNumbering, goTruncCellHints]
+    PopupMenu = TSG_PM
+    RowCount = 10
     TabOrder = 8
-    OnClick = TSGClick
     ColWidths = (
-      37
-      44
-      64
+      25
+      45
+      35
+      150
+      250
+      250
+      65
+      65
     )
     Cells = (
-      2
+      10
       0
       0
-      'Index'
+      '№'
       1
       1
       '0'
+      1
+      2
+      '0'
+      1
+      3
+      '0'
+      1
+      4
+      '0'
+      1
+      5
+      '0'
+      1
+      6
+      '0'
+      1
+      7
+      '0'
+      1
+      8
+      '0'
+      1
+      9
+      '0'
     )
+  end
+  object TSG_PM: TPopupMenu
+    Left = 140
+    Top = 170
+    object MI_load: TMenuItem
+      Caption = 'Загрузить'
+    end
+    object MI_save: TMenuItem
+      Caption = 'Сохранить'
+    end
+    object MI_add_str: TMenuItem
+      Caption = 'Добавить строку'
+    end
+    object MI_del_str: TMenuItem
+      Caption = 'Удалить строку'
+    end
   end
 end
